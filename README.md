@@ -8,7 +8,7 @@ This is my solution for [Frontend Mentor](https://www.frontendmentor.io) challen
 
 ## 🔗 Live Link / Demo Link:
 
-- ???
+- https://alapina.github.io/FAQ-Accordion-Card---JavaScript
 
 ## 🛠 Technologies Used:
 
