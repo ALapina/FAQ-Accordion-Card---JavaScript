@@ -1,0 +1,253 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(#af67e9, #6565e7);
+  color: #787887;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  /*min-height and grid place-items center in a body to put attribution right under the component.
+  but generally I think it's better to put height and grid on container */
+  /*min-height so linear-gradient would not clipp at the bottom */
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  color: #1d1e35;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+button {
+  color: #4a4b5e;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+/* Remove the focus indicator on mouse-focus for browsers that do support :focus-visible */
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+button:focus-visible {
+  /* Draw a very noticeable focus style for
+     keyboard-focus on browsers that do support
+     :focus-visible */
+  outline: 2px dashed #f47c57;
+  outline-offset: 0px;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.component {
+  margin: 0 auto;
+  max-width: 920px;
+  width: 100%;
+  background-color: #ffffff;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-position: -565px -295px;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+          box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  border-radius: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.illustration {
+  width: 100%;
+  position: relative;
+}
+
+.illustration__box {
+  position: absolute;
+  z-index: 999;
+  top: 200px;
+  left: -95px;
+}
+
+.illustration__woman-desktop {
+  position: absolute;
+  top: 60px;
+  left: -77px;
+  -webkit-clip-path: inset(0px 0px 0px 77px);
+          clip-path: inset(0px 0px 0px 77px);
+}
+
+.illustration__woman-mobile {
+  display: none;
+}
+
+.faq {
+  width: 100%;
+  padding-top: 65px;
+  padding-bottom: 80px;
+}
+
+.faq__title {
+  margin: 0;
+  padding-bottom: 25px;
+}
+
+.faq__question {
+  max-width: 350px;
+  width: 100%;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.faq__question-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  cursor: pointer;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.faq__question-button::after {
+  content: url(../images/icon-arrow-down.svg);
+  margin-right: 17px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.faq__question-button:hover {
+  color: #f47c57;
+}
+
+.faq__desc {
+  margin-left: -40px;
+  padding-right: 17px;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #e7e7e9;
+  padding-top: 10px;
+}
+
+.attribution a {
+  color: #af67e9;
+}
+
+.faq__desc.show-description {
+  height: 2rem;
+  margin-bottom: 15px;
+}
+
+/* Arrows */
+/* closed */
+.faq__question-button::after {
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+}
+
+/* open */
+.font-weight-bold::after {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+}
+
+@media only screen and (max-width: 800px) {
+  .illustration__woman-desktop {
+    max-width: 120%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    /* added padding here to mobile container,
+    so illustration__woman-desctop would not be cropped at the top */
+    padding-top: 105px;
+  }
+  .component {
+    max-width: 327px;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-position: top;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .illustration__box {
+    display: none;
+  }
+  .illustration__woman-desktop {
+    display: none;
+  }
+  .illustration__woman-mobile {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: -105px;
+    left: 12px;
+  }
+  .faq {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 132px;
+    padding-bottom: 48px;
+  }
+  .faq__question {
+    max-width: 279px;
+  }
+  .faq__question-button {
+    width: 279px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+  .faq__question-button::after {
+    padding-right: 0px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

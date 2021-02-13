@@ -1,0 +1,15 @@
+{
+  "name": "faq-js-final",
+  "version": "1.0.0",
+  "description": "![Design preview for the FAQ Accordion Card coding challenge](./design/desktop-preview.jpg)",
+  "main": "main.js",
+  "dependencies": {
+    "cypress": "^6.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
